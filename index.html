@@ -99,37 +99,13 @@ let BtnEle = document.querySelector(".Btn");
 
 BtnEle.addEventListener("click", (img, w, h) => {
 
-//canvas.width = 1080;
-//canvas.height = 1080;
+canvas.width = 1080;
+canvas.height = 1080;
 
-//context.globalAlpha = 1.0;
-//context.drawImage(picture, 0, 0, canvas.width, canvas.height);
-//context.globalAlpha = 5.0;
-//context.drawImage(twibbon, 0, 0, canvas.width, canvas.height);
-
-// Set width and height
-canvas.width = w;
-canvas.height = h;
-// Draw the image
-let containerRatio = h / w;
-let width = img.naturalWidth;
-let height = img.naturalHeight;
-let imgRatio = height / width;
-
-if (imgRatio > containerRatio) { // image's height too big
-height = width * containerRatio;
-} else { // image's width too big
-width = height / containerRatio;
-}
-
-let s = {
-width: width,
-height: height,
-offsetX: (img.naturalWidth - width) * .5,
-offsetY: (img.naturalHeight - height) * .5
-};
-context.drawImage(img, s.offsetX, s.offsetY, s.width, s.height, 0, 0, w, h);
-return canvas;
+context.globalAlpha = 1.0;
+context.drawImage(picture, 0, 0, canvas.width, canvas.height);
+context.globalAlpha = 5.0;
+context.drawImage(twibbon, 0, 0, canvas.width, canvas.height);
 });
 
 function readIMAGE(input) {
