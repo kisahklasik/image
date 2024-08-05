@@ -42,5 +42,19 @@ width: auto;
 domain in literature without prior coordination or asking for permission.</p>
 <p><a href="https://www.iana.org/domains/example">More information...</a></p>
 </main>
+<script src="https://unpkg.com/@agilie/canvas-image-cover-position"></script>
+<script>
+var bImage = document.getElementById('back-image'),
+canvas1 = document.getElementById('canvas1'),
+canvas2 = document.getElementById('canvas2'),
+image = document.getElementById('image'),
+imagePosition;
+
+bImage.style.backgroundImage = 'url(' + image.src + ')';
+imagePosition = canvasImageCoverPosition(image.naturalWidth, image.naturalHeight , canvas2.width, canvas2.height);
+
+canvas1.getContext('2d').drawImage(image, 0, 0, image.naturalWidth, image.naturalHeight);
+canvas2.getContext('2d').drawImage(image, imagePosition.offsetLeft, imagePosition.offsetTop, imagePosition.width, imagePosition.height);
+</script>
 </body>
 </html>
