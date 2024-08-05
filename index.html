@@ -78,6 +78,26 @@ Background image with size cover:
 </main>
 <script src="https://unpkg.com/@agilie/canvas-image-cover-position"></script>
 <script>
+const imageUploader = document.querySelector("input");
+const imagePreview = document.querySelector("img");
+
+function showImage() {
+let reader = new FileReader();
+reader.readAsDataURL(imageUploader.files[0]);
+reader.onload = function(e) {
+imagePreview.classList.add("show");
+imagePreview.src = e.target.result;
+};
+}
+
+// OR
+
+// function showImage() {
+//   const file = imageUploader.files[0];
+//     imagePreview.classList.add("show");
+//     imagePreview.src = URL.createObjectURL(file);
+// }
+        
 var bImage = document.getElementById('back-image'),
 canvas1 = document.getElementById('canvas1'),
 canvas2 = document.getElementById('canvas2'),
