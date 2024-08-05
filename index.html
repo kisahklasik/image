@@ -101,11 +101,14 @@ BtnEle.addEventListener("click", () => {
 
 canvas.width = this.naturalWidth/2;
 canvas.height = this.naturalHeight/2;
-        
-context.globalAlpha = 1.0;
-context.drawImage(picture, 0, 0, canvas.width, canvas.height);
-context.globalAlpha = 5.0;
-context.drawImage(twibbon, 0, 0, canvas.width, canvas.height);
+
+context.drawImage(this, 0, 0);
+context.drawImage(this, 0, 0, this.width/2, this.height/2);
+
+//context.globalAlpha = 1.0;
+//context.drawImage(picture, 0, 0, canvas.width, canvas.height);
+//context.globalAlpha = 5.0;
+//context.drawImage(twibbon, 0, 0, canvas.width, canvas.height);
 });
 
 function readIMAGE(input) {
