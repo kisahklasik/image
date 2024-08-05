@@ -60,7 +60,7 @@ width: auto;
 <p>
 <div style="display: inline-block;">
 Canvas(400x550) with calculated image position:
-<p><canvas id="canvas2" width="300" height="300"></canvas></p>
+<p><canvas id="cvs" width="300" height="300"></canvas></p>
 </div>
 </p>
         
@@ -91,7 +91,7 @@ URL.revokeObjectURL(output.src)
 var bImage = document.getElementById('back-image'),
 image = document.getElementById('image'),
 mask = document.getElementById('frame'),
-canvas2 = document.getElementById('canvas2'),
+canvas = document.getElementById('cvs'),
 context = canvas.getContext("2d"),
 imagePosition;
 
