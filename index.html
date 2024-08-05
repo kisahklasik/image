@@ -91,20 +91,18 @@ width: auto;
 let picture = document.getElementById("image");
 let twibbon = document.getElementById("frame");
 let canvas = document.querySelector(".result");
-var context = canvas.getContext("2d");
+let context = canvas.getContext("2d");
 let BtnEle = document.querySelector(".Btn");
 
 BtnEle.addEventListener("click", () => {
 
-var offsetX = 0.5;   
-var offsetY = 0.5;
 canvas.width = 1080;
 canvas.height = 1080;
 
 context.globalAlpha = 1.0;
-context.drawImage(picture, 0, 0, canvas.width, canvas.height, offsetX, offsetY);
+context.drawImage(picture, 0, 0, canvas.width, canvas.height);
 context.globalAlpha = 5.0;
-context.drawImage(twibbon, 0, 0, canvas.width, canvas.height, offsetX, offsetY);
+context.drawImage(twibbon, 0, 0, canvas.width, canvas.height);
 });
 
 function readIMAGE(input) {
