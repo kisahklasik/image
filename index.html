@@ -87,12 +87,13 @@ width: auto;
 <p>
 <button class="Btn">CLICK HERE</button>
 <button onclick="dlPNG()">DOWNLOAD</button>
+<button id="delete">DELETE</button>
 </p>
         
 </main>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>        
-var remove = document.getElementById("delete");
+let remove = document.getElementById("delete");
 let picture = document.getElementById("image");
 let twibbon = document.getElementById("frame");
 let canvas = document.querySelector(".result");
