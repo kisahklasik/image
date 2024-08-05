@@ -96,7 +96,7 @@ context = canvas.getContext("2d"),
 imagePosition;
 
 function gen() {
-bImage.style.backgroundImage = 'url(' + image.src + ')';
+// bImage.style.backgroundImage = 'url(' + image.src + ')';
 imagePosition = canvasImageCoverPosition(image.naturalWidth, image.naturalHeight , canvas2.width, canvas2.height);
 context.drawImage(image, imagePosition.offsetLeft, imagePosition.offsetTop, imagePosition.width, imagePosition.height);
 var image = context.getImageData(imagePosition.offsetLeft, imagePosition.offsetTop, imagePosition.width, imagePosition.height);
