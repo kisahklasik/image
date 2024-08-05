@@ -25,18 +25,17 @@ a:link, a:visited {
 color: #38488f;
 text-decoration: none;
 }
-/*
-img {
-width: 48%;
-height: 50%;
+img, canvas {
+width: 100%;
+height: auto;
 background: #f0f0f2;
 }
 */
 .box {
 position: relative;
 overflow:hidden;
-width:100%;
-max-height:600px;
+width:300px;
+height:300px;
 }
 .box img {
 position: absolute;
@@ -45,15 +44,10 @@ left:50%;
 -webkit-transform:translate(-50%,-50%);
 -ms-transform:translate(-50%,-50%);
 transform:translate(-50%,-50%);
-width:100%;
-max-height:600px;
+width:300px;
+height:300px;
 -o-object-fit:cover;
 object-fit:cover;
-}
-canvas {
-width: 100%;
-max-height: 600px;
-background: #ad123a;
 }
 @media (max-width: 700px) {
 main {
