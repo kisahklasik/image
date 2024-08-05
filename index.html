@@ -109,6 +109,16 @@ $('#frame')
 reader.readAsDataURL(input.files[0]);
 }
 }
+
+function dlPNG() {
+const canvas = document.querySelector('.result');
+canvas.toBlob((blob) => {
+const link = document.createElement("a");
+link.href = URL.createObjectURL(blob);
+link.download = "avatar.png";
+link.click();
+})
+};
 </script>
 </body>
 </html>
