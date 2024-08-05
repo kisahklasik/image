@@ -91,14 +91,35 @@ width: auto;
 let picture = document.getElementById("image");
 let twibbon = document.getElementById("frame");
 let canvas = document.querySelector(".result");
-var context = canvas.getContext("2d");
+let context = canvas.getContext("2d");
 let BtnEle = document.querySelector(".Btn");
 
 BtnEle.addEventListener("click", () => {
 
-canvas.width = 1080;
-canvas.height = 1080;
+//canvas.width = 1080;
+//canvas.height = 1080;
 
+contex.drawImage(picture, 0, 0);
+
+var MAX_WIDTH = 300;
+var MAX_HEIGHT = 300;
+var width = picture.width;
+var height = picture.height;
+
+if (width > height) {
+if (width > MAX_WIDTH) {
+height *= MAX_WIDTH / width;
+width = MAX_WIDTH;
+}
+} else {
+if (height > MAX_HEIGHT) {
+width *= MAX_HEIGHT / height;
+height = MAX_HEIGHT;
+}
+}
+canvas.width = width;
+canvas.height = height;
+        
 context.globalAlpha = 1.0;
 context.drawImage(picture, 0, 0, canvas.width, canvas.height);
 context.globalAlpha = 5.0;
