@@ -54,13 +54,6 @@ width: auto;
 <h1>Example Domain</h1>
 <p><input type="file" accept='image/*' onchange="loadFile(event)"></p>
 <p><input type="file" accept='image/*' onchange="loadFrame(event)"></p>
-
-<!--
-<div style="display: inline-block;">
-<p>Canvas(400x550) with natural size image:</p>
-<canvas id="canvas1" width="300" height="300"></canvas>
-</div>
--->
         
 <p>
 <div style="display: inline-block;">
@@ -68,13 +61,6 @@ Canvas(400x550) with calculated image position:
 <p><canvas id="canvas2" width="300" height="300"></canvas></p>
 </div>
 </p>
-
-<!--
-<div style="display: inline-block;">
-Background image with size cover: 
-<p><div id="back-image"></div></p>
-</div>
--->
         
 <p><button onclick="gen()">Generate</button></p>
 <p>
@@ -110,9 +96,7 @@ imagePosition;
 function gen() {
 bImage.style.backgroundImage = 'url(' + image.src + ')';
 imagePosition = canvasImageCoverPosition(image.naturalWidth, image.naturalHeight , canvas2.width, canvas2.height);
-
-canvas1.getContext('2d').drawImage(image, 0, 0, image.naturalWidth, image.naturalHeight);
-canvas2.getContext('2d').drawImage(image, imagePosition.offsetLeft, imagePosition.offsetTop, imagePosition.width, imagePosition.height);
+context.drawImage(image, imagePosition.offsetLeft, imagePosition.offsetTop, imagePosition.width, imagePosition.height);
 }
 </script>
 </body>
