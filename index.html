@@ -99,11 +99,11 @@ BtnEle.addEventListener("click", () => {
 //canvas.width = 1080;
 //canvas.height = 1080;
 
-canvas.width = this.naturalWidth/2;
-canvas.height = this.naturalHeight/2;
+canvas.width = picture.naturalWidth/2;
+canvas.height = picture.naturalHeight/2;
 
-context.drawImage(this, 0, 0);
-context.drawImage(this, 0, 0, this.width/2, this.height/2);
+context.drawImage(picture, 0, 0);
+context.drawImage(twibbon, 0, 0, this.width/2, this.height/2);
 
 //context.globalAlpha = 1.0;
 //context.drawImage(picture, 0, 0, canvas.width, canvas.height);
