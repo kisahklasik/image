@@ -53,6 +53,8 @@ width: auto;
 <main>
 <h1>Example Domain</h1>
 <p><input type="file" accept='image/*' onchange="loadFile(event)"></p>
+<p><input type="file" accept='image/*' onchange="loadFrame(event)"></p>
+
 <p>
 <div style="display: inline-block;">
 <p>Canvas(400x550) with natural size image:</p>
@@ -87,7 +89,7 @@ URL.revokeObjectURL(output.src)
 }
 };
 
-var loadTemplate = function(event) {
+var loadFrame = function(event) {
 var output = document.getElementById('frame');
 output.src = URL.createObjectURL(event.target.files[0]);
 output.onload = function() {
