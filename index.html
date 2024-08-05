@@ -29,7 +29,7 @@ text-decoration: none;
 width: 100%;
 height: auto;
 }
-img {
+img, canvas {
 width: 100%;
 height: auto;
 background: #ad123a;
@@ -38,11 +38,13 @@ display: none;
 #image.show, #mask.show {
 display: block;
 }
+/*
 canvas {
 width: 100%;
 height: auto;
 background: #ad123a;
 }
+*/
 @media (max-width: 700px) {
 main {
 margin: 0 auto;
@@ -62,7 +64,7 @@ width: auto;
 <div style="display: inline-block;">
 <img id="image" src="sakura.jpg">
 <img id="frame" src="overlay.png">
-<canvas id="cvs" width="300" height="300"></canvas>
+<canvas id="cvs"></canvas>
 </div>
 </p>
         
