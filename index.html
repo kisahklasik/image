@@ -98,9 +98,9 @@ BtnEle.addEventListener("click", () => {
 resEle.width = imgEle1.width;
 resEle.height = imgEle1.height;
 context.globalAlpha = 1.0;
-context.drawImage(imgEle1, 0, 0);
+context.drawImage(imgEle1, 0, 0, resEle.width, resEle.height);
 context.globalAlpha = 0.5;
-context.drawImage(imgEle2, 0, 0);
+context.drawImage(imgEle2, 0, 0, resEle.width, resEle.height);
 });
 
 //context.drawImage(image, 0, 1, width, height);
