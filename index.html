@@ -67,7 +67,6 @@ width: auto;
         
 <p><button onclick="gen()">Generate</button></p>
 </main>
-<script src="https://unpkg.com/@agilie/canvas-image-cover-position"></script>
 <script>
 var loadFile = function(event) {
 var output = document.getElementById('image');
@@ -105,28 +104,6 @@ context.drawImage(mask, 0, 0, width, height);
 var mask2 = context.getImageData(0, 0, width, height);
 var maskData2 = mask2.data;
 }
-
-return (function (contentWidth, contentHeight, containerWidth, containerHeight, offsetLeft, offsetTop) {
-var contentRatio = contentWidth / contentHeight;
-var containerRatio = containerWidth / containerHeight;
-var resultHeight;
-var resultWidth;
-offsetLeft = typeof offsetLeft === 'undefined' ? 0.5 : offsetLeft;
-offsetTop = typeof offsetTop === 'undefined' ? 0.5 : offsetTop;
-if (contentRatio > containerRatio) {
-resultHeight = containerHeight;
-resultWidth = containerHeight * contentRatio;
-}
-else {
-resultWidth = containerWidth;
-resultHeight = containerWidth / contentRatio;
-}
-return {
-width: resultWidth,
-height: resultHeight,
-offsetLeft:(containerWidth - resultWidth) * offsetLeft,
-offsetTop: (containerHeight - resultHeight) * offsetTop
-};
 </script>
 </body>
 </html>
