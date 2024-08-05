@@ -80,13 +80,16 @@ BtnEle.addEventListener("click", () => {
 
 canvas.width = 1080;
 canvas.height = 1080;
-context.drawImage(picture, 0, 0, canvas.width, canvas.height);
-context.drawImage(twibbon, 0, 0, canvas.width, canvas.height);
 
 context.globalAlpha = 1.0;
-context.drawImage(imgEle1, 0, 0, canvas.width, canvas.height);
+context.drawImage(picture, 0, 0, canvas.width, canvas.height);
 context.globalAlpha = 0.5;
-context.drawImage(imgEle2, 0, 0, canvas.width, canvas.height);
+context.drawImage(twibbon, 0, 0, canvas.width, canvas.height);
+
+//context.globalAlpha = 1.0;
+//context.drawImage(imgEle1, 0, 0, canvas.width, canvas.height);
+//context.globalAlpha = 0.5;
+//context.drawImage(imgEle2, 0, 0, canvas.width, canvas.height);
 });
 
 </script>
