@@ -30,12 +30,12 @@ text-decoration: none;
 display: inline-block;
 background: no-repeat center;
 background-size: cover;
-width: 400px;
-height: 550px;
+width: 100%;
+height: auto;
 }
 #image {
 width: auto;
-height: 400px;
+height: auto;
 }
 canvas {
 background: #ad123a;
@@ -55,14 +55,14 @@ width: auto;
 <p>
 <div style="display: inline-block;">
 <p>Canvas(400x550) with natural size image:</p>
-<canvas id="canvas1"></canvas>
+<canvas id="canvas1" width="300" height="300"></canvas>
 </div>
 </p>
         
 <p>
 <div style="display: inline-block;">
 Canvas(400x550) with calculated image position:
-<p><canvas id="canvas2"></canvas></p>
+<p><canvas id="canvas2" width="300" height="300"></canvas></p>
 </div>
 </p>
 
