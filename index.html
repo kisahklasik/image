@@ -85,17 +85,29 @@ URL.revokeObjectURL(output.src)
 };
 
 function gen() {
-// bImage.style.backgroundImage = 'url(' + image.src + ')';
-// var bImage = document.getElementById('back-image'),
 var image = document.getElementById('image');
 var mask = document.getElementById('frame');
 var canvas = document.getElementById('cvs');
 var context = canvas.getContext("2d");
 
-var width = mask.width;
-var height = mask.height;
-canvas.width = width;
-canvas.height = height;
+// var width = mask.width;
+// var height = mask.height;
+// canvas.width = width;
+// canvas.height = height;
+
+var contentRatio = contentWidth / contentHeight;
+var containerRatio = containerWidth / containerHeight;
+var resultHeight;
+var resultWidth;
+offsetLeft = typeof offsetLeft === 'undefined' ? 0.5 : offsetLeft;
+offsetTop = typeof offsetTop === 'undefined' ? 0.5 : offsetTop;
+if (contentRatio > containerRatio) {
+resultHeight = containerHeight;
+resultWidth = containerHeight * contentRatio;
+}
+else {
+resultWidth = containerWidth;
+resultHeight = containerWidth / contentRatio;
 
 context.drawImage(image, 0, 1, width, height);
 var image1 = context.getImageData(0, 0, width, height);
