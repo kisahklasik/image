@@ -106,11 +106,11 @@ canvas2 = document.getElementById('canvas2'),
 imagePreview = document.getElementById("image"),  
 imagePosition;
 
-bImage.style.backgroundImage = 'url(' + imagePreview.src + ')';
-imagePosition = canvasImageCoverPosition(imagePreview.naturalWidth, imagePreview.naturalHeight , canvas2.width, canvas2.height);
+bImage.style.backgroundImage = 'url(' + image.src + ')';
+imagePosition = canvasImageCoverPosition(image.naturalWidth, image.naturalHeight , canvas2.width, canvas2.height);
 
-canvas1.getContext('2d').drawImage(imagePreview, 0, 0, imagePreview.naturalWidth, imagePreview.naturalHeight);
-canvas2.getContext('2d').drawImage(imagePreview, imagePosition.offsetLeft, imagePosition.offsetTop, imagePosition.width, imagePosition.height);
+canvas1.getContext('2d').drawImage(image, 0, 0, image.naturalWidth, image.naturalHeight);
+canvas2.getContext('2d').drawImage(image, imagePosition.offsetLeft, imagePosition.offsetTop, imagePosition.width, imagePosition.height);
 </script>
 </body>
 </html>
