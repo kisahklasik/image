@@ -101,10 +101,10 @@ URL.revokeObjectURL(output.src)
 };
 
 var bImage = document.getElementById('back-image'),
-canvas1 = document.getElementById('canvas1'),
-canvas2 = document.getElementById('canvas2'),
 image = document.getElementById('image'),
 mask = document.getElementById('frame'),
+canvas2 = document.getElementById('canvas2'),
+context = canvas.getContext("2d"),
 imagePosition;
 
 function gen() {
