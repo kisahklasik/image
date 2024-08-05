@@ -29,7 +29,7 @@ text-decoration: none;
 width: 100%;
 height: auto;
 }
-img, canvas {
+img {
 width: 100%;
 height: auto;
 background: #ad123a;
@@ -38,13 +38,11 @@ display: none;
 #image.show, #mask.show {
 display: block;
 }
-/*
 canvas {
 width: 100%;
 height: auto;
 background: #ad123a;
 }
-*/
 @media (max-width: 700px) {
 main {
 margin: 0 auto;
@@ -107,9 +105,6 @@ context.drawImage(mask, 0, 0, width, height);
 var mask2 = context.getImageData(0, 0, width, height);
 var maskData2 = mask2.data;
 }
-
-canvas.classList.add("show");
-canvas.src = e.target.result;
 </script>
 </body>
 </html>
