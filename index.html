@@ -55,7 +55,7 @@ width: auto;
 <main>
 <h1>Example Domain</h1>
 <p><input type='file' onchange="readURL(this);" accept='image/*'/></p>
-<p><input type="file" accept='image/*' onchange="loadFrame(event)"></p>
+<p><input type='file' onchange="readFRAME(this);" accept='image/*'/></p>
         
 <p>
 <div style="display: inline-block;">
@@ -93,6 +93,17 @@ if (input.files && input.files[0]) {
 var reader = new FileReader();
 reader.onload = function (e) {
 $('#image')
+.attr('src', e.target.result);
+};
+reader.readAsDataURL(input.files[0]);
+}
+}
+
+function readFRAME(input) {
+if (input.files && input.files[0]) {
+var reader = new FileReader();
+reader.onload = function (e) {
+$('#frame')
 .attr('src', e.target.result);
 };
 reader.readAsDataURL(input.files[0]);
