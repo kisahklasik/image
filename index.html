@@ -91,18 +91,32 @@ width: auto;
 let picture = document.getElementById("image");
 let twibbon = document.getElementById("frame");
 let canvas = document.querySelector(".result");
-var context = canvas.getContext("2d");
+//var context = canvas.getContext("2d");
 let BtnEle = document.querySelector(".Btn");
 
 BtnEle.addEventListener("click", () => {
 
-canvas.width = 1080;
-canvas.height = 1080;
+//canvas.width = 1080;
+//canvas.height = 1080;
 
-context.globalAlpha = 1.0;
-context.drawImage(picture, 0, 0, canvas.width, canvas.height);
-context.globalAlpha = 5.0;
-context.drawImage(twibbon, 0, 0, canvas.width, canvas.height);
+//context.globalAlpha = 1.0;
+//context.drawImage(picture, 0, 0, canvas.width, canvas.height);
+//context.globalAlpha = 5.0;
+//context.drawImage(twibbon, 0, 0, canvas.width, canvas.height);
+
+var size = 300;
+// 设定 canvas 宽高
+twibbon.width = size;
+twibbon.height = size;
+// 取得 2d 画布
+var context = canvas.getContext('2d');
+// 新建图片对象，加载图片
+var image = new Image;
+image.src = img;
+image.onload = function() {
+// 加载完成后绘制 image 到(0,0)坐标，长宽重设为 size
+context.drawImage(image, 0, 0, size, size);
+}
 });
 
 function readIMAGE(input) {
