@@ -32,11 +32,23 @@ height: 50%;
 background: #f0f0f2;
 }
 */
-img:only-of-type {
-width: 60vw;
-height: 90vh;
-object-position: 50% 50%; /* center of the container */
-object-fit: cover; 
+.box {
+position: relative;
+overflow:hidden;
+width:300px;
+height:300px;
+}
+.box img {
+position: absolute;
+top:50%;
+left:50%;
+-webkit-transform:translate(-50%,-50%);
+-ms-transform:translate(-50%,-50%);
+transform:translate(-50%,-50%);
+width:300px;
+height:300px;
+-o-object-fit:cover;
+object-fit:cover;
 }
 canvas {
 width: 100%;
