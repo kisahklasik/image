@@ -54,7 +54,7 @@ width: auto;
 <body>
 <main>
 <h1>Example Domain</h1>
-<p><input type='file' onchange="readURL(this);" accept='image/*'/></p>
+<p><input type='file' onchange="readIMAGE(this);" accept='image/*'/></p>
 <p><input type='file' onchange="readFRAME(this);" accept='image/*'/></p>
         
 <p>
@@ -88,7 +88,7 @@ context.globalAlpha = 5.0;
 context.drawImage(twibbon, 0, 0, canvas.width, canvas.height);
 });
 
-function readURL(input) {
+function readIMAGE(input) {
 if (input.files && input.files[0]) {
 var reader = new FileReader();
 reader.onload = function (e) {
