@@ -98,10 +98,10 @@ var height = mask.height;
 canvas.width = width;
 canvas.height = height;
         
-context.drawImage(image, 0, 0, width, height);
+context.drawImage(image, 0, 1, width, height);
 var image1 = context.getImageData(imagePosition.offsetLeft, imagePosition.offsetTop, imagePosition.width, imagePosition.height);
 var imageData1 = image1.data;
-context.drawImage(mask, imagePosition.offsetLeft, imagePosition.offsetTop, imagePosition.width, imagePosition.height);
+context.drawImage(mask, 0, 0, width, height);
 var mask2 = context.getImageData(imagePosition.offsetLeft, imagePosition.offsetTop, imagePosition.width, imagePosition.height);
 var maskData2 = mask2.data;
 }
