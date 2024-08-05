@@ -97,7 +97,9 @@ var width = mask.width;
 var height = mask.height;
 canvas.width = width;
 canvas.height = height;
+imagePosition;
         
+imagePosition = canvasImageCoverPosition(image.naturalWidth, image.naturalHeight , canvas.width, canvas.height);
 context.drawImage(image, 0, 1, width, height);
 var image1 = context.getImageData(imagePosition.offsetLeft, imagePosition.offsetTop, imagePosition.width, imagePosition.height);
 var imageData1 = image1.data;
