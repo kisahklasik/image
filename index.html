@@ -80,7 +80,7 @@ Background image with size cover:
 <script src="https://unpkg.com/@agilie/canvas-image-cover-position"></script>
 <script>
 const imageUploader = document.querySelector("input");
-const imagePreview = document.getElementById("image");
+// const imagePreview = document.getElementById("image");
 
 function showImage() {
 let reader = new FileReader();
@@ -102,14 +102,15 @@ imagePreview.src = e.target.result;
 var bImage = document.getElementById('back-image'),
 canvas1 = document.getElementById('canvas1'),
 canvas2 = document.getElementById('canvas2'),
-image = document.getElementById('image'),
+// image = document.getElementById('image'),
+imagePreview = document.getElementById("image"),  
 imagePosition;
 
-bImage.style.backgroundImage = 'url(' + image.src + ')';
-imagePosition = canvasImageCoverPosition(image.naturalWidth, image.naturalHeight , canvas2.width, canvas2.height);
+bImage.style.backgroundImage = 'url(' + imagePreview.src + ')';
+imagePosition = canvasImageCoverPosition(imagePreview.naturalWidth, imagePreview.naturalHeight , canvas2.width, canvas2.height);
 
-canvas1.getContext('2d').drawImage(image, 0, 0, image.naturalWidth, image.naturalHeight);
-canvas2.getContext('2d').drawImage(image, imagePosition.offsetLeft, imagePosition.offsetTop, imagePosition.width, imagePosition.height);
+canvas1.getContext('2d').drawImage(imagePreview, 0, 0, imagePreview.naturalWidth, imagePreview.naturalHeight);
+canvas2.getContext('2d').drawImage(imagePreview, imagePosition.offsetLeft, imagePosition.offsetTop, imagePosition.width, imagePosition.height);
 </script>
 </body>
 </html>
