@@ -86,7 +86,15 @@ output.onload = function() {
 URL.revokeObjectURL(output.src)
 }
 };
-        
+
+var loadTemplate = function(event) {
+var output = document.getElementById('frame');
+output.src = URL.createObjectURL(event.target.files[0]);
+output.onload = function() {
+URL.revokeObjectURL(output.src)
+}
+};
+
 var bImage = document.getElementById('back-image'),
 canvas1 = document.getElementById('canvas1'),
 canvas2 = document.getElementById('canvas2'),
