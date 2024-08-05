@@ -33,8 +33,8 @@ background-size: cover;
 width: 100%;
 height: auto;
 }
-#image {
-width: auto;
+#image, #mask {
+width: 100%;
 height: auto;
 }
 img, canvas {
@@ -104,11 +104,11 @@ canvas.width = width;
 canvas.height = height;
         
 context.drawImage(image, imagePosition.offsetLeft, imagePosition.offsetTop, imagePosition.width, imagePosition.height);
-// var image1 = context.getImageData(imagePosition.offsetLeft, imagePosition.offsetTop, imagePosition.width, imagePosition.height);
-// var imageData1 = image1.data;
+var image1 = context.getImageData(imagePosition.offsetLeft, imagePosition.offsetTop, imagePosition.width, imagePosition.height);
+var imageData1 = image1.data;
 context.drawImage(mask, imagePosition.offsetLeft, imagePosition.offsetTop, imagePosition.width, imagePosition.height);
-// var mask2 = context.getImageData(imagePosition.offsetLeft, imagePosition.offsetTop, imagePosition.width, imagePosition.height);
-// var maskData2 = mask2.data;
+var mask2 = context.getImageData(imagePosition.offsetLeft, imagePosition.offsetTop, imagePosition.width, imagePosition.height);
+var maskData2 = mask2.data;
 }
 </script>
 </body>
