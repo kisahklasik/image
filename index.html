@@ -72,7 +72,7 @@ width: auto;
 </main>
 <script>        
 var loadFile = function(event) {
-var output = document.getElementById('image');
+var output = document.querySelectorAll('.image');
 output.src = URL.createObjectURL(event.target.files[0]);
 output.onload = function() {
 image.classList.add("show");
@@ -81,7 +81,7 @@ image.src = e.target.result;
 };
         
 var loadFrame = function(event) {
-var output = document.getElementById('frame');
+var output = document.querySelectorAll('.frame');
 output.src = URL.createObjectURL(event.target.files[0]);
 output.onload = function() {
 mask.classList.add("show");
