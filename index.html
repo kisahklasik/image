@@ -69,15 +69,6 @@ width: auto;
 <p><button onclick="gen()">Generate</button></p>
 </main>
 <script>
-function loadFile() {
-let reader = new FileReader();
-reader.readAsDataURL(imageUploader.files[0]);
-reader.onload = function(e) {
-image.classList.add("show");
-image.src = e.target.result;
-};
-}
-
 function loadFrame() {
 let reader = new FileReader();
 reader.readAsDataURL(imageUploader.files[0]);
@@ -87,13 +78,14 @@ mask.src = e.target.result;
 };
 }
         
-//var loadFile = function(event) {
-//var output = document.getElementById('image');
-//output.src = URL.createObjectURL(event.target.files[0]);
-//output.onload = function() {
-//URL.revokeObjectURL(output.src)
-//}
-//};
+var loadFile = function(event) {
+var output = document.getElementById('image');
+output.src = URL.createObjectURL(event.target.files[0]);
+output.onload = function() {
+image.classList.add("show");
+image.src = e.target.result;
+}
+};
 
 var loadFrame = function(event) {
 var output = document.getElementById('frame');
