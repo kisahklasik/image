@@ -63,6 +63,7 @@ width: auto;
 <img id="image" src="sakura.jpg">
 <img id="frame" src="sakura.jpg">
 <canvas id="cvs" width="300" height="300"></canvas>
+<div id="back-image"></div>
 </p>
 </div>
 </p>
@@ -88,7 +89,7 @@ URL.revokeObjectURL(output.src)
 };
 
 function gen() {
-// bImage.style.backgroundImage = 'url(' + image.src + ')';
+bImage.style.backgroundImage = 'url(' + image.src + ')';
 var bImage = document.getElementById('back-image'),
 image = document.getElementById('image'),
 mask = document.getElementById('frame'),
