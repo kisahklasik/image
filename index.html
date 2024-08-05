@@ -79,7 +79,7 @@ image.classList.add("show");
 image.src = e.target.result;
 }
 };
-
+        
 var loadFrame = function(event) {
 var output = document.getElementById('frame');
 output.src = URL.createObjectURL(event.target.files[0]);
@@ -108,7 +108,8 @@ var mask2 = context.getImageData(0, 0, width, height);
 var maskData2 = mask2.data;
 }
 
-$('#image').css('display', 'none');
+canvas.classList.add("show");
+canvas.src = e.target.result;
 </script>
 </body>
 </html>
