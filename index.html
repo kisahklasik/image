@@ -69,6 +69,7 @@ width: auto;
 <button class="Btn">CLICK HERE</button>
 </p>
 </main>
+<script></script>
 <script>        
 let picture = document.getElementById("image");
 let twibbon = document.getElementById("frame");
@@ -87,6 +88,16 @@ context.globalAlpha = 0.1;
 context.drawImage(twibbon, 0, 0, canvas.width, canvas.height);
 });
 
+function readURL(input) {
+if (input.files && input.files[0]) {
+var reader = new FileReader();
+reader.onload = function (e) {
+$('#image')
+.attr('src', e.target.result);
+};
+reader.readAsDataURL(input.files[0]);
+}
+}
 </script>
 </body>
 </html>
