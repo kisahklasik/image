@@ -96,19 +96,13 @@ let BtnEle = document.querySelector(".Btn");
 
 BtnEle.addEventListener("click", () => {
 
-//canvas.width = 1080;
-//canvas.height = 1080;
+canvas.width = 1080;
+canvas.height = 1080;
 
-canvas.width = img.naturalWidth/2;
-canvas.height = img.naturalHeight/2;
-
-context.drawImage(picture, 0, 0, img.width/2, img.height/2);
-context.drawImage(twibbon, 0, 0, img.width/2, img.height/2);
-
-//context.globalAlpha = 1.0;
-//context.drawImage(picture, 0, 0, canvas.width, canvas.height);
-//context.globalAlpha = 5.0;
-//context.drawImage(twibbon, 0, 0, canvas.width, canvas.height);
+context.globalAlpha = 1.0;
+context.drawImage(picture, 0, 0, canvas.width, canvas.height);
+context.globalAlpha = 5.0;
+context.drawImage(twibbon, 0, 0, canvas.width, canvas.height);
 });
 
 function readIMAGE(input) {
