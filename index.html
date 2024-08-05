@@ -35,7 +35,7 @@ height: auto;
 background: #ad123a;
 display: none;
 }
-img.show {
+#image.show, #mask.show {
 display: block;
 }
 canvas {
@@ -91,7 +91,8 @@ var loadFrame = function(event) {
 var output = document.getElementById('frame');
 output.src = URL.createObjectURL(event.target.files[0]);
 output.onload = function() {
-URL.revokeObjectURL(output.src)
+mask.classList.add("show");
+mask.src = e.target.result;
 }
 };
 
