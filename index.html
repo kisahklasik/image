@@ -60,7 +60,7 @@ width: auto;
 <p>
 <div style="display: inline-block;">
 <img class="image" src="sakura.jpg"/>
-<img class="image" src="overlay.png"/>
+<img class="frame" src="overlay.png"/>
 <canvas class="result"></canvas>
 </div>
 </p>
@@ -90,7 +90,7 @@ mask.src = e.target.result;
 
 // function gen() {
 let imgEle1 = document.querySelectorAll(".image")[0];
-let imgEle2 = document.querySelectorAll(".image")[1];
+let imgEle2 = document.querySelectorAll(".frame")[1];
 let resEle = document.querySelector(".result");
 var context = resEle.getContext("2d");
 let BtnEle = document.querySelector(".Btn");
