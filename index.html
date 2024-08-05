@@ -33,6 +33,7 @@ img {
 width: 100%;
 height: auto;
 background: #ad123a;
+dispay: none;
 }
 img.show {
 display: block;
@@ -59,7 +60,7 @@ width: auto;
         
 <p>
 <div style="display: inline-block;">
-<img id="image" src="sakura.jpg" style="display:none;">
+<img id="image" src="sakura.jpg">
 <img id="frame" src="sakura.jpg">
 <canvas id="cvs" width="300" height="300"></canvas>
 </div>
@@ -72,8 +73,17 @@ function loadFile() {
 let reader = new FileReader();
 reader.readAsDataURL(imageUploader.files[0]);
 reader.onload = function(e) {
-imagePreview.classList.add("show");
-imagePreview.src = e.target.result;
+image.classList.add("show");
+image.src = e.target.result;
+};
+}
+
+function loadFrame() {
+let reader = new FileReader();
+reader.readAsDataURL(imageUploader.files[0]);
+reader.onload = function(e) {
+mask.classList.add("show");
+mask.src = e.target.result;
 };
 }
         
