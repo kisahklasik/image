@@ -88,16 +88,21 @@ URL.revokeObjectURL(output.src)
 }
 };
 
+function gen() {
+// bImage.style.backgroundImage = 'url(' + image.src + ')';
 var bImage = document.getElementById('back-image'),
 image = document.getElementById('image'),
 mask = document.getElementById('frame'),
 canvas = document.getElementById('cvs'),
 context = canvas.getContext("2d"),
 imagePosition;
-
-function gen() {
-// bImage.style.backgroundImage = 'url(' + image.src + ')';
+        
 imagePosition = canvasImageCoverPosition(image.naturalWidth, image.naturalHeight , canvas2.width, canvas2.height);
+var width = frame.width;
+var height = frame.height;
+canvas.width = width;
+canvas.height = height;
+        
 context.drawImage(image, imagePosition.offsetLeft, imagePosition.offsetTop, imagePosition.width, imagePosition.height);
 // var image1 = context.getImageData(imagePosition.offsetLeft, imagePosition.offsetTop, imagePosition.width, imagePosition.height);
 // var imageData1 = image1.data;
