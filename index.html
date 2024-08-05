@@ -33,7 +33,6 @@ img {
 width: 100%;
 height: auto;
 background: #ad123a;
-display: none;
 }
 img.show {
 display: block;
@@ -60,7 +59,7 @@ width: auto;
         
 <p>
 <div style="display: inline-block;">
-<img id="image" src="sakura.jpg">
+<img id="image" src="sakura.jpg" style="display:none;">
 <img id="frame" src="sakura.jpg">
 <canvas id="cvs" width="300" height="300"></canvas>
 </div>
@@ -77,15 +76,6 @@ imagePreview.classList.add("show");
 imagePreview.src = e.target.result;
 };
 }
-
-function loadFrame() {
-let reader = new FileReader();
-reader.readAsDataURL(imageUploader.files[0]);
-reader.onload = function(e) {
-imagePreview.classList.add("show");
-imagePreview.src = e.target.result;
-};
-}
         
 //var loadFile = function(event) {
 //var output = document.getElementById('image');
@@ -95,13 +85,13 @@ imagePreview.src = e.target.result;
 //}
 //};
 
-//var loadFrame = function(event) {
-//var output = document.getElementById('frame');
-//output.src = URL.createObjectURL(event.target.files[0]);
-//output.onload = function() {
-//URL.revokeObjectURL(output.src)
-//}
-//};
+var loadFrame = function(event) {
+var output = document.getElementById('frame');
+output.src = URL.createObjectURL(event.target.files[0]);
+output.onload = function() {
+URL.revokeObjectURL(output.src)
+}
+};
 
 function gen() {
 var image = document.getElementById('image');
