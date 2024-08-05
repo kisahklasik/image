@@ -89,27 +89,25 @@ mask.src = e.target.result;
 };
 
 // function gen() {
-let imgEle1 = document.querySelectorAll(".image")[0];
-let imgEle2 = document.querySelectorAll(".frame")[1];
+let picture = document.querySelectorAll(".image")[0];
+let frame = document.querySelectorAll(".frame")[1];
 let canvas = document.querySelector(".result");
 var context = resEle.getContext("2d");
 let BtnEle = document.querySelector(".Btn");
+
 BtnEle.addEventListener("click", () => {
-canvas.width = imgEle1.width;
-canvas.height = imgEle1.height;
+
+canvas.width = 1080;
+canvas.height = 1080;
+context.drawImage(picture, 0, 0, canvas.width, canvas.height);
+context.drawImage(frame, 0, 0, canvas.width, canvas.height);
+
 context.globalAlpha = 1.0;
 context.drawImage(imgEle1, 0, 0, canvas.width, canvas.height);
 context.globalAlpha = 0.5;
 context.drawImage(imgEle2, 0, 0, canvas.width, canvas.height);
 });
 
-//context.drawImage(image, 0, 1, width, height);
-//var image1 = context.getImageData(0, 0, width, height);
-//var imageData1 = image1.data;
-//context.drawImage(mask, 0, 0, width, height);
-//var mask2 = context.getImageData(0, 0, width, height);
-//var maskData2 = mask2.data;
-//}
 </script>
 </body>
 </html>
