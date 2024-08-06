@@ -84,7 +84,7 @@ width: auto;
 <!--<p><canvas class="result"></canvas></p>-->        
 
 <p>
-<button class="Btn">CLICK HERE</button>
+<button class="Btn" onclick="scaleToFit(img)">CLICK HERE</button>
 <button onclick="dlPNG()">DOWNLOAD</button>
 </p>
         
@@ -139,6 +139,21 @@ link.download = "avatar.png";
 link.click();
 })
 };
+
+var image = new Image();
+image.src = "imgURL";
+image.onload = function(){
+scaleToFit(this);
+}
+
+function scaleToFit(img){
+// get the scale
+var scale = Math.min(canvas.width / img.width, canvas.height / img.height);
+// get the top left position of the image
+var x = (canvas.width / 2) - (img.width / 2) * scale;
+var y = (canvas.height / 2) - (img.height / 2) * scale;
+context.drawImage(img, x, y, img.width * scale, img.height * scale);
+}
 </script>
 </body>
 </html>
