@@ -130,6 +130,16 @@ reader.readAsDataURL(input.files[0]);
 }
 }
 
+function imageIsLoad(e) {
+var image = new Image();
+image.onload = function(){
+var ratio = this.height / this.width;
+canvas.height = canvas.width * ratio;   
+context.drawImage(this, 0,0, canvas.width, canvas.height); 	
+};
+image.src = e.target.result;
+}
+        
 function dlPNG() {
 const canvas = document.querySelector('.result');
 canvas.toBlob((blob) => {
